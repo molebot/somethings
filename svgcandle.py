@@ -85,13 +85,13 @@ class SVG:
             tag = k[-1]
             color = k[-3]
             style = "fill:none;stroke:rgb(%d,%d,%d);stroke-width:1"%color
-            min = self.min[tag]
+            _min = self.min[tag]
             k = self.k[tag]
             data = []
             i = 0
             for o in v:
                 center = i*self.block+self.border+self.half
-                y = (o-min)/k
+                y = (o-_min)/k
                 data.append((center,y))
                 i+=1
             out.append(self.line(data,style))
